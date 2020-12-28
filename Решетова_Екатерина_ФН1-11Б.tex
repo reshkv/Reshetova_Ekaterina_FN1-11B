@@ -1,0 +1,307 @@
+%------------------Settings-------------------------
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphics}
+\usepackage{pbox}
+\usepackage[x11names]{xcolor}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
+\usepackage[colorlinks=true,linkcolor=royalazure]{hyperref}
+\usepackage{tikz, tkz-fct, pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+} 
+\usepackage[labelsep=period]{caption}
+
+% ----------------- Commands ----------------- 
+
+\newcommand{\eps}{\varepsilon}
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+
+% ----------------- Set graphics path ----------------- 
+\graphicspath{{img/}}
+\begin{document}
+\pagestyle{empty}
+
+% ----------------------Title----------------------------------
+\centerline{\large Министерство науки и высшего образования}	
+\centerline{\large Федеральное государственное бюджетное образовательное}
+\centerline{\large учреждение высшего образования}
+\centerline{\large ``Московский государственный технический университет}
+\centerline{\large имени Н.Э. Баумана}
+\centerline{\large (национальный исследовательский университет)''}
+\centerline{\large (МГТУ им. Н.Э. Баумана)}
+\hrule
+\vspace{0.5cm}
+\begin{figure}[h]
+\center
+\includegraphics[height=0.35\linewidth]{bmstu-logo-small.png}
+\end{figure}
+\begin{center}
+	\large	
+	\begin{tabular}{c}
+		Факультет ``Фундаментальные науки'' \\
+		Кафедра ``Высшая математика''		
+	\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+	\LARGE \bf	
+	\begin{tabular}{c}
+		\textsc{Отчёт} \\
+		по учебной практике \\
+		за 1 семестр 2020---2021 гг.
+	\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+	\large
+	\begin{tabular}{p{5.3cm}ll}
+		\pbox{5.45cm}{
+			Руководитель практики,\\
+			ст. преп. кафедры ФН1} 	& \tline{\it(подпись)}{5cm} & Кравченко О.В. \\[0.5cm]
+		студент группы ФН1--11 		& \tline{\it(подпись)}{5cm} & Решетова Е.В.
+	\end{tabular}
+\end{center}
+\vfill
+\begin{center}
+	\large	
+	\begin{tabular}{c}
+		Москва, \\
+		2020 г.
+	\end{tabular}
+\end{center}
+ \newpage
+ \newpage	
+\tableofcontents
+
+%------------------Table of contents----------------------
+\newpage
+\section{Цели и задачи практики}	
+\subsection{Цели}
+--- развитие компетенций, способствующих успешному освоению материала бакалавриата и необходимых в будущей профессиональной деятельности.
+
+\subsection{Задачи}
+\begin{enumerate}
+\item Знакомство с программными средствами, необходимыми в будущей профессиональной деятельности.
+\item Развитие умения поиска необходимой информации в специальной литературе и других источниках.
+\item Развитие навыков составления отчётов и презентации результатов.
+\end{enumerate}
+
+\subsection{Индивидуальное задание}	
+\begin{enumerate}
+\item Изучить способы отображения математической информации в системе вёртски \LaTeX.
+\item Изучить возможности  системы контроля версий \textsf{Git}.
+\item Научиться верстать математические тексты, содержащие формулы и графики в системе \LaTeX.
+Для этого, выполнить установку свободно распространяемого дистрибутива \textsf{TeXLive} и оболочки \textsf{TeXStudio}.
+\item Оформить в системе \LaTeX типовые расчёты по курсе математического анализа согласно своему варианту.
+\item Создать аккаунт на онлайн ресурсе \textsf{GitHub} и загрузить исходные \textsf{tex}--файлы 
+и результат компиляции в формате \textsf{pdf}.
+\end{enumerate}
+ 
+%---------------------------------------------------------------
+\newpage
+\section{Отчёт}
+Актуальность темы продиктована необходимостью владеть системой вёрстки \LaTeX и средой вёрстки \textsf{TeXStudio} для
+отображения текста, формул и графиков. Полученные в ходе практики навыки могут быть применены при написании
+курсовых проектов и дипломной работы, а также в дальнейшей профессиональной деятельности.
+
+Ситема вёрстки \LaTeX содержит большое количество инструментов (пакетов), упрощающих отображение информации в различных 
+сферах инженерной и научной деятельности. 
+%-----------------------------------------------------------------
+\newpage
+\section{Индивидуальное задание}
+%\subsection{Элементарные функции и их графики.}
+%\input{src/part1.tex}
+
+%---------------------------------------------------------------
+\subsection{Пределы и непрерывность.}
+
+%---------------------------- Problem 1----------------------------------
+\subsubsection*{\center Задача № 1.}
+{\bf Условие.~}
+Дана последовательность $a_{n}=\dfrac{3-n^2}{1+2n^2}$ и число $c=-\dfrac{1}{2}$. Доказать, что $\lim\limits_{x\rightarrow\infty} a_{n}=c $, а именно, для каждого $\varepsilon>0$ найти наименьшее натуральное число  $N{=}N(\varepsilon)$ такое, что $|a_{n}-c|<\varepsilon$ для всех $n>N(\varepsilon)$. Заполнить таблицу: 
+\begin{center}
+\begin{tabular}{ | p{25pt} | c | c | c | c |}
+\hline
+$\varepsilon$& $0{,}1$ & $0{,}01$ & $0{,}001$ \\ \hline
+$N(\varepsilon)$ &   &   &\\
+\hline
+\end{tabular}
+\end{center}
+\medskip
+%=====================================================================
+{\bf Решение.~}
+Рассмотрим неравенство $a_{n}-c<\varepsilon$, $\forall\varepsilon>0$, учитывая выражение для $a_{n}$ и $c$ из условия варианта, получим 
+$$\left|\frac{3-n^2}{1+2n^2}+\frac{1}{2}\right|<\varepsilon$$
+Неравенство запишем в виде двойного неравенства и приведём выражение под знаком модуля к общему знаменателю, получим
+$${-}\varepsilon <\dfrac{7}{2+4n^2}<\varepsilon$$
+Заметим, что левое неравенство выполнено для любого номера $n\in \mathbb{N}$ поэтому, будем рассматривать правое неравенство
+$$\frac{7}{2+4n^2}<\varepsilon$$
+Выполнив цепочку преобразований, перепишем неравенство относительно $n$, и, учитывая, что $n\in \mathbb{N}$, получим 
+$$\dfrac{7}{2(1+2n^2)}<\varepsilon,$$
+$$1+2n^2>\dfrac{7}{2\varepsilon},$$
+$$n>\sqrt{\dfrac{7}{4\varepsilon}-\dfrac{1}{2}},$$
+$$n>\sqrt{\dfrac{7-2\varepsilon}{4\varepsilon}},$$
+$$N(\varepsilon)=\biggl[\sqrt{\dfrac{7-2\varepsilon}{4\varepsilon}}\biggr],$$
+где $[\;]$ -- целая часть от числа. Заполним таблицу:
+\begin{center}
+\begin{tabular}{ | p{25pt} | c | c | c | c |}
+\hline
+$\varepsilon$& $0{,}1$ & $0{,}01$ & $0{,}001$ \\ \hline
+$N(\varepsilon)$ & 4  & 13 & 41\\
+\hline
+\end{tabular}
+\end{center}
+{\bf Проверка:~}
+$$|a_{5}-c|=\dfrac{7}{102}<0{,}1,$$
+$$|a_{14}-c|=\dfrac{7}{786}<0{,}01,$$
+$$|a_{42}-c|=\dfrac{7}{7058}<0{,}001.$$
+\newpage
+% ---------------------------- Problem 2----------------------------------
+\subsubsection*{\center Задача № 2.}
+{\bf Условие.~}
+Вычислить пределы функций
+$$
+\begin{array}{cc}
+\text{\bf(а):} &  \lim\limits_{x\rightarrow-2}\bigg(\dfrac{-2}{x+2}+\dfrac{x^3}{x^2-4}\bigg) , \\[10pt]
+\text{\bf(б):} & \lim\limits_{x\rightarrow+\infty} \dfrac{3x^4+2x^2\sqrt{x^6-x^3+1}}{\Big(\sqrt[3]{x^4+4}-\sqrt{x^5}\Big)^2} ,\\[10pt]
+\text{\bf(в):} & \lim\limits_{x\rightarrow0} \dfrac{\sqrt{x+2}-\sqrt{2-x}}{\sqrt[3]{x+2}-\sqrt[3]{2-x}} ,\\[10pt]
+\text{\bf(г):} & \lim\limits_{x\rightarrow1} {\Big(1+\tg{\pi{x}}\Big)}^{\dfrac{1}{x-1}} , \\[10pt]
+\text{\bf(д):} & \lim\limits_{x\rightarrow0} {\big(\cos{x}\big)}^{\dfrac{3x^2}{1-\cos{x}}} , \\[10pt]
+\text{\bf(е):}  & \lim\limits_{x\rightarrow\pi} \dfrac{x^2-\pi^2}{\sin{x}} . \\
+\end{array}
+$$
+\\
+{\bf Решение.~}\\
+\\
+\text{\bf(а):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow-2} \bigg(\dfrac{-2}{x+2}+\dfrac{x^3}{x^2-4}\bigg) =  \lim\limits_{x\rightarrow-2}  \bigg(\dfrac{(x+2)(x^2-2x+2)}{(x-2)(x+2)}\bigg) = \lim\limits_{x\rightarrow-2}  \bigg(\dfrac{x^2-2x+2}{x-2}\bigg) =-\dfrac{5}{2}
+\end{array}
+$$
+\\
+\text{\bf(б):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow+\infty} \dfrac{3x^4+2x^2\sqrt{x^6-x^3+1}}{\Big(\sqrt[3]{x^4+4}-\sqrt{x^5}\Big)^2}=\left[\dfrac{\infty}{\infty}\right]= \lim\limits_{x\rightarrow+\infty} \dfrac{3x^4+2\sqrt{x^{10}-x^7+x^4}}{\sqrt[3]{x^8+8x^4+16}-2\sqrt[3]{x^4+4}\sqrt{x^5}+x^5}=\\
+ =\lim\limits_{x\rightarrow+\infty} \dfrac{\dfrac{3}{x}+2\sqrt{1-\dfrac{1}{x^3}+\dfrac{1}{x^6}}}{\sqrt[3]{\dfrac{1}{x^7}+\dfrac{8}{x^{11}}+\dfrac{16}{x^{15}}}-2\sqrt[3]{\dfrac{1}{x^{11}}+\dfrac{4}{x^{15}}}\sqrt{\dfrac{1}{x^5}}+1}
+= \lim\limits_{x\rightarrow+\infty} \dfrac{0+2\sqrt{1-0+0}}{\sqrt[3]{0+0+0}-2\sqrt[3]{0+0}\sqrt{0}+1}=2
+\end{array}
+$$
+\text{\bf(в):}
+ $$
+ \begin{array}{l}  
+ \lim\limits_{x\rightarrow0} \dfrac{\sqrt{x+2}-\sqrt{2-x}}{\sqrt[3]{x+2}-\sqrt[3]{2-x}} = \left[\dfrac{0}{0} \right]= \lim\limits_{x\rightarrow0} \dfrac{2x\Big(\big(\sqrt[3]{x+2}\big)^2+\sqrt[3]{4-x^2}+\big(\sqrt[3]{2-x}\big)^2\Big)}{2x\Big(\sqrt{x+2}+\sqrt{2-x}\Big)} = \lim\limits_{x\rightarrow0} \dfrac{\big(2\sqrt[3]{2}\big)^2+\sqrt[3]{4}}{2\sqrt{2}}=\\ \medskip{}{} =\dfrac{3\sqrt[6]{2}}{2}
+ \end{array}
+ $$
+ \\
+\text{\bf(г):}
+$$
+\begin{array}{l}
+ \lim\limits_{x\rightarrow1} \Big(1+\tg{\pi{x}}\Big)^{\dfrac{1}{x-1}}=\left[1^{\infty}\right] =\left|y=x-1,y\rightarrow0\right|=\lim\limits_{y\rightarrow0} \Big(1+\tg\left({\pi{y}+\pi}\right)\Big)^{\dfrac{1}{y}} = e^{\lim\limits_{y\rightarrow0} \dfrac{1}{y}\big(\tg{\pi{y}}\big)} = \\
+=\left|y\rightarrow0,\tg{\pi{y}}\sim{\pi{y}}\right|=e^{\pi}
+\end{array}
+$$
+\\
+\text{\bf(д):}
+$$
+\begin{array}{l}
+ \lim\limits_{x\rightarrow0} \left(\cos{x}\right)^{\dfrac{3x^2}{1-\cos{x}}}=\left[1^{\infty}\right]=e^{\lim\limits_{x\rightarrow0} \Big(\dfrac{3x^2}{1-\cos{x}}\Big)(\cos{x}-1)}=e^{-\lim\limits_{x\rightarrow0} \Big(\dfrac{3x^2}{1-\cos{x}}\Big)(1-\cos{x})}=e^{-\lim\limits_{x\rightarrow0} 3x^2}=e^0=1
+\end{array}
+$$
+\\
+\text{\bf(е):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow\pi} \dfrac{x^2-{\pi}^2}{\sin{x}}=\left[\dfrac{0}{0}\right]=\left|y=x-\pi,y\rightarrow0\right|=\lim\limits_{y\rightarrow0} \dfrac{\left(y+\pi\right)^2-{\pi}^2}{\sin({y}+\pi)}=\lim\limits_{y\rightarrow0} \dfrac {y(y+2\pi)} {-\sin{y}}=\left|y\rightarrow0,-\sin{y}\sim-{y}\right|=  \\=\lim\limits_{y\rightarrow0} -({y+2\pi})=-2\pi
+\end{array}
+$$
+% ---------------------------- Problem 3----------------------------------
+\subsubsection*{\center Задача № 3.}
+{\bf Условие.~}\\
+\text{\bf(а):} Показать, что данные функции
+$f(x)$ и $g(x)$ являются бесконечно малыми или бесконечно большими
+при указанном стремлении аргумента. \\
+\text{\bf(б):} Для каждой функции $f(x)$ и $g(x)$ записать главную часть
+(эквивалентную ей функцию)  вида $C(x-x_0)^{\alpha}$ при $x\rightarrow x_0$ или $Cx^{\alpha}$
+при $x\rightarrow\infty$, указать их порядки малости (роста). \\
+\text{\bf(в):} Сравнить функции $f(x)$ и $g(x)$ при указанном стремлении.
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		№ варианта & функции $f(x)$ и $g(x)$ & стремление \\[6pt]
+		\hline
+		19 & $f(x) = x^2+x-2,~g(x)=\dfrac{\ln(x+3)}{\arcsin{\sqrt{x+2}}}$ & $x\rightarrow-2+$ \\
+		\hline
+		\end{tabular}
+		\bigskip
+		\\
+		{\bf Решение.~}\\
+		\end{center}
+		\medskip
+		\text{\bf(а):}~Покажем, что $f(x)$ и $g(x)$ бесконечно малые функции,
+$$
+ \begin{array}{l} 
+\lim\limits_{x\rightarrow-2+} f(x)=\lim\limits_{x\rightarrow -2+} x^2+x-2 =\lim\limits_{x\rightarrow -2+} (-2)^2-2-2=0 , \\
+ 
+\lim\limits_{x\rightarrow-2+} g(x)= \lim\limits_{x\rightarrow -2+}  \dfrac{\ln(x+3)}{\arcsin{\sqrt{x+2}}}=\left|y=x+2,y\rightarrow0\right|=\lim\limits_{y\rightarrow 0} \dfrac{\ln(y+1)}{\arcsin\sqrt{y}}=\\
+=\left|y\rightarrow0,\ln(y+1)\sim{y},\arcsin\sqrt{y}\sim\sqrt{y}\right|=\lim\limits_{y\rightarrow 0} \dfrac{y}{\sqrt{y}}=\lim\limits_{y\rightarrow 0} \sqrt{y}=0.
+\end{array}
+$$
+\text{\bf(б):}~Так как $f(x)$ и $g(x)$ бесконечно малые функции, то эквивалентными им будут функции вида 
+$C(x-x_0)^{\alpha}$ при $x\rightarrow x_0$. Найдём эквивалентную для $f(x)$ из условия
+$$
+\lim\limits_{x\rightarrow x_0}\dfrac{f(x)}{(x-x_0)^{\alpha}} = C,
+$$
+где $C$ --- некоторая константа. Рассмотрим предел
+$$
+\lim\limits_{x\rightarrow -2+} \dfrac{x^2+x-2}{(x+2)^{\alpha}}=\lim\limits_{x\rightarrow -2+} \dfrac{(x+2)(x-1)}{(x+2)^{\alpha}}=
+\lim\limits_{x\rightarrow -2+} \dfrac{x-1}{(x+2)^{\alpha-1}}=\left[\alpha=1\right]=-3
+$$
+При $\alpha=1$ предел равен $-3$, отсюда $C=-3$ и 
+$$
+f(x)\sim -3x-6~\text{при}~x\rightarrow -2+.
+$$
+Аналогично, рассмотрим предел
+$$
+\lim\limits_{x\rightarrow x_0}\dfrac{g(x)}{(x-x_0)^{\alpha}} =\lim\limits_{x\rightarrow -2+}\dfrac{\ln(x+3)}{\arcsin\sqrt{x+2}(x+2)^{\alpha}}=\left|y=x+2,y\rightarrow0\right|=\lim\limits_{y\rightarrow 0} \dfrac{\ln(y+1)}{\arcsin\sqrt{y} (y^{\alpha})}=
+$$
+\newpage
+$$
+= \left|y\rightarrow0,\ln(1+y)\sim y,\arcsin\sqrt{y}\sim \sqrt{y}\right|=\lim\limits_{y\rightarrow 0} \dfrac{y}{\sqrt{y} (y^{\alpha})}= 
+\lim\limits_{y\rightarrow 0} \dfrac{\sqrt{y}}{y^{\alpha}}=\left[\alpha=\dfrac{1}{2}\right]=1
+$$
+При $\alpha=\dfrac{1}{2}$ предел равен $1$, отсюда $C=1$ и
+$$
+g(x)\sim \sqrt{x+2} ~\text{при}~x\rightarrow -2+.
+$$
+\text{\bf(в):}~Для сравнения функций $f(x)$ и $g(x)$ рассмотрим предел их отношения при указанном стремлении
+$$
+\lim\limits_{x\rightarrow -2+}\dfrac{f(x)}{g(x)}.
+$$
+Применим эквивалентности, определенные в пункте (б), получим
+$$
+\lim\limits_{x\rightarrow -2+}\dfrac{f(x)}{g(x)} = \lim\limits_{x\rightarrow -2+}\dfrac{-3x-6}{\sqrt{x+2}}=\lim\limits_{x\rightarrow -2+} \dfrac{-3(x+2)}{\sqrt{x+2}}=\lim\limits_{x\rightarrow -2+} -3\sqrt{x+2}=0
+$$
+Отсюда, $f(x)$ есть бесконечно малая функция более высокого порядка роста, чем $g(x)$.
+%=================================================================================================================================
+%\subsection{Приложения дифференциального исчисления.}
+%\input{src/part3.tex}
+\newpage
+\addcontentsline{toc}{section}{Список литературы}
+\begin{thebibliography}{99}
+\bibitem{book01} Львовский С.М. Набор и вёрстка в системе \LaTeX, 2003 c.
+\bibitem{book02} Е.М. Балдин Компьютерная типография \LaTeX.
+\bibitem{book03} М.С. Чебарыков Основы работы в системе \LaTeX, 2014.
+\end{thebibliography}
+\end{document}
